@@ -3,6 +3,7 @@ const morgan = require("morgan");
 
 const indexRouter = require("./routes/index");
 const moviesRouter = require("./routes/movies");
+const usersRouter = require("./routes/users")
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 //routes
 app.use(indexRouter);
 app.use("/api/movies", moviesRouter);
+app.use("/api/users", usersRouter);
 
 //Starting the server
 app.listen(app.get("port"), () => {
